@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" type="text/css" href="app.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    
+</head>
+<body>
+    <div id="app">
+        <p v-if="isLoading">Loading</p>
+        
+        <Vuecart v-bind:cart = cart
+                 title = "Shopping Cart"
+                 type = "shoppingCart"
+                 v-on:itemchangedoncart = "handleItemChange"
+        ></Vuecart>
+        <Vuecart v-bind:cart = saved
+                 title = "Saved For Later"
+                 type = "savedCart"
+                 v-on:itemchangedoncart = "handleItemChange"   
+        ></Vuecart>
+
+    </div>
+</body>
+</html>
+
